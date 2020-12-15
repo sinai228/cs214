@@ -1,0 +1,88 @@
+V "GNAT Lib v7"
+P ZX
+
+RN
+RV NO_ALLOCATORS
+RV NO_IO
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DEFAULT_INITIALIZATION
+RV SPARK_05
+
+U list_package%b	list_package.adb	5bc9b2c5 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+U list_package%s	list_package.ads	dead7917 EE NE OO PK
+
+D ada.ads		20170106103348 76789da1 ada%s
+D a-except.ads		20151016123252 291912d5 ada.exceptions%s
+D a-inteio.ads		20070406091342 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140225151544 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20141120112812 119b8fb3 ada.streams%s
+D a-tags.ads		20151016130316 01f5e3ef ada.tags%s
+D a-textio.ads		20140717063745 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140717063513 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20170106103348 31484697 ada.unchecked_conversion%s
+D interfac.ads		20160502101001 5ab55268 interfaces%s
+D i-cstrea.ads		20140801100435 e53d8b8e interfaces.c_streams%s
+D list_package.ads	20200419104221 dead7917 list_package%s
+D list_package.adb	20200419104143 4b42b7a2 list_package%b
+D system.ads		20170510173650 4635ec04 system%s
+D s-crtl.ads		20141120112812 0ebbdb71 system.crtl%s
+D s-exctab.ads		20140225151139 54135002 system.exception_table%s
+D s-ficobl.ads		20140718105747 078245e4 system.file_control_block%s
+D s-parame.ads		20140801093848 7e2a0d7f system.parameters%s
+D s-soflin.ads		20151020124036 14e1eb6c system.soft_links%s
+D s-stache.ads		20140225151139 a37c21ec system.stack_checking%s
+D s-stalib.ads		20151112104907 09bd3940 system.standard_library%s
+D s-stoele.ads		20140225151139 2dc34a04 system.storage_elements%s
+D s-traent.ads		20140730135025 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20160502101423 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20140718092328 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 13|8r6 8r19 9r5 9r18
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[8|46] 13|8w23 9r22
+X 7 a-textio.ads
+49K13*Text_IO 471e16 13|8w10 9r9
+208U14*Put 13|78s7
+X 8 a-tiinio.ads
+66U14*Put 13|78s17[3|18]
+X 12 list_package.ads
+8K9*List_Package 72E9 92l5 92e17 13|11b14 127l5 127t17
+11R8*List 20r30 28r29 35r31 43r57 52r29 60r28 69r31 85c10 90e17 13|20r31
+. 32r30 42r31 52r58 74r29 89r27 109r31
+20U13*Init 20<18 13|20b13 25l7 25t11
+20r18 A_List{11R8} 13|20b18 22m5 23m5 24m5
+28V12*Empty{boolean} 28>18 13|32b12 35l7 35t12
+28r18 A_List{11R8} 13|32b18 34r12
+35V12*Length{integer} 35>19 13|42b12 45l7 45t13
+35r19 A_List{11R8} 13|42b19 44r12
+43U13*Append 43>20 43=42 13|52b13 67l7 67t13
+43i20 A_Value{integer} 13|52b20 55r27
+43r42 A_List{11R8} 13|52b42 58r8 59m8 61r8 64m5 66m5 66r26
+52U13*Put 52>18 13|74b13 81l7 81t10
+52r18 A_List{11R8} 13|74b17 75r29
+60V12*Max{integer} 60>17 13|89b12 100l7 100t10
+60r17 A_List{11R8} 13|89b16 90r28
+69V12*Search{integer} 69>20 69>37 13|109b12 125l7 125t13
+69r20 A_List{11R8} 13|109b20 110r28
+69i37 A_Value{integer} 13|109b37 115r31
+72R9 List_Node 75r28 78c9 82e17 13|53r41
+75P9 Node_Ptr(72R9) 81r19 87r20 88r19 13|53r25 75r16 90r16 110r16
+80i8*Its_Value{integer} 13|55m14 78r30 94r19 95r31 115r19
+81p8*Its_Next{75P9} 13|56m14 61m24 79r28 97r28 119r30
+87p8*Its_First{75P9} 13|22m12 59m15 75r36 90r35 110r35
+88p8*Its_Last{75P9} 13|23m12 61r15 64m12
+89i8*Its_Length{integer} 13|24m12 34r19 44r19 58r15 66m12 66r33
+X 13 list_package.adb
+53p5 Temp_Ptr{12|75P9} 55r5 56r5 59r28 61r36 64r24
+75p5 Temp_Ptr{12|75P9} 77r11 78r21 79m7 79r19
+90p5 Temp_Ptr{12|75P9} 93r11 94r10 95r22 97m7 97r19
+91i5 Max_Value{integer} 94r31 95m9 99r12
+110p5 Temp_Ptr{12|75P9} 114r11 115r10 119m9 119r21
+111i5 Count{integer} 116r16 118m9 118r18
+

@@ -1,0 +1,73 @@
+Script started on 2020-03-05 10:08:45-0500
+]0;sp46@gold10: ~/214/projects/04/clojure[01;32msp46@gold10[00m:[01;34m~/214/projects/04/clojure[00m$ cat   cd c src
+]0;sp46@gold10: ~/214/projects/04/clojure/src[01;32msp46@gold10[00m:[01;34m~/214/projects/04/clojure/src[00m$ cat factorial.clj
+;;;; logTable.clj displays a table of logarithms.
+;;;;
+;;;; Input: a number, float.
+;;;; Precondition: the number must be a positive integer.
+;;;; Output: The nth factorial of the integer value n
+;;;;
+;;;; Begun by: Prof. Adams, for CS 214 at Calvin College.
+;;;; Completed by: Sinai Park(sp46)
+;;;; Date: March 4 2020
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns factorial)                                 ; name the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Factorial() recursively generates the nth factorial of a number.
+;;;; Receive: the nth count as it decrements by one each loop
+;;;;
+;;;; Precondition: count value must be greater than zero.
+;;;;                factorial number must start at one
+;;;; Output: The factorial of given number.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; direct-recursive version
+
+; replace this line with the definition of Factorial().
+
+(defn factorialCalc [number result count] 
+  (if (<= count number) 
+    (do 
+      (factorialCalc number (* result count) (+ count 1)) ;recursion
+     
+  )
+  result ;show factorial stores in result variable
+  )
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; -main is a 'driver' for the displayLogTable() functions.
+;;; Input: n, integer value.
+;;; Output: The factorial of the integer value n, as user input
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defn -main []
+ (print "To compute the factorial of given n,enter the value: ") (flush)
+  (let  
+    [number (read)]
+    (print(factorialCalc number 1.0 2.0))
+    (println)
+  )
+ )
+]0;sp46@gold10: ~/214/projects/04/clojure/src[01;32msp46@gold10[00m:[01;34m~/214/projects/04/clojure/src[00m$ cd - 
+/home/sp46/214/projects/04/clojure
+]0;sp46@gold10: ~/214/projects/04/clojure[01;32msp46@gold10[00m:[01;34m~/214/projects/04/clojure[00m$ clojure -m factorial
+To compute the factorial of given n,enter the value: 2
+2.0
+]0;sp46@gold10: ~/214/projects/04/clojure[01;32msp46@gold10[00m:[01;34m~/214/projects/04/clojure[00m$ clojure -m factorial
+To compute the factorial of given n,enter the value: 4
+24.0
+]0;sp46@gold10: ~/214/projects/04/clojure[01;32msp46@gold10[00m:[01;34m~/214/projects/04/clojure[00m$ clojure -m factorial
+To compute the factorial of given n,enter the value: 6
+720.0
+]0;sp46@gold10: ~/214/projects/04/clojure[01;32msp46@gold10[00m:[01;34m~/214/projects/04/clojure[00m$ clojure -m factorial
+8
+To compute the factorial of given n,enter the value: 40320.0
+]0;sp46@gold10: ~/214/projects/04/clojure[01;32msp46@gold10[00m:[01;34m~/214/projects/04/clojure[00m$ clojure -m factorial
+To compute the factorial of given n,enter the value: 21
+5.109094217170944E19
+]0;sp46@gold10: ~/214/projects/04/clojure[01;32msp46@gold10[00m:[01;34m~/214/projects/04/clojure[00m$ exit
+
+Script done on 2020-03-05 10:09:28-0500

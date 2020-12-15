@@ -1,0 +1,93 @@
+Script started on 2020-02-06 16:58:36-0500
+c]0;sp46@gold12: ~/214/projects/01/clojure[01;32msp46@gold12[00m:[01;34m~/214/projects/01/clojure[00m$ cat src/circle_area.clj
+cat: src/circle_area.clj: No such file or directory
+]0;sp46@gold12: ~/214/projects/01/clojure[01;32msp46@gold12[00m:[01;34m~/214/projects/01/clojure[00m$ cat src.[K/rec_area.clj
+;;;; rec_area.clj calculates the area of a rectangle.
+;;;;
+;;;; Input: The width and height of a rectangle.
+;;;; Output: The area of that rectangle.
+;;;;
+;;;; Usage: clojure -m rec_area
+;;;;
+;;;; Created by: Sinai Park(sp46)
+;;;; Date:Feb 6 2020
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns rec_area) ; namespace function names the program
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Function recArea() computes the area of a rectangle.
+;;; Receive: itsWidth, a number, itsHeight, a number
+;;; Precondition: itsWidth >= 0.0. itsHeight >= 0.0.
+;;; Return: the area of the corresponding rectangle.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn recArea [itsWidth itsHeight]
+  (* itsWidth itsHeight)   ; return the area w*h
+)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Function -main is where execution begins
+;;; Input: the width and height of a rectangle.
+;;; Output: the area of that rectangle.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main []
+  (println "\nTo compute the area of a rectangle,")
+  (print   " enter its width and its height: (in decimal form) ") (flush)
+
+  (let
+    [ width (read) height (read) ]
+    (assert (>= width 0) "-main: width must be positive")
+    (assert (>= height 0) "-main: height must be positive")
+
+    (printf "\nThe area is %f\n\n" (recArea width height))
+
+    (print "\nThe area is ")
+    (print (recArea width height))
+    (print "\n\n")
+
+    (printf "\nThe area is %.15f\n\n" (recArea width height))
+  )
+)  ]0;sp46@gold12: ~/214/projects/01/clojure[01;32msp46@gold12[00m:[01;34m~/214/projects/01/clojure[00m$ cljure[K[K[K[Kojure -m rec_area
+
+To compute the area of a rectangle,
+ enter its width and its height: (in decimal form) 3.0 5.  6.0 
+
+The area is 18.000000
+
+
+The area is 18.0
+
+
+The area is 18.000000000000000
+
+]0;sp46@gold12: ~/214/projects/01/clojure[01;32msp46@gold12[00m:[01;34m~/214/projects/01/clojure[00m$ 12.3 13.[K[K[K45.6
+12.3: command not found
+]0;sp46@gold12: ~/214/projects/01/clojure[01;32msp46@gold12[00m:[01;34m~/214/projects/01/clojure[00m$ 12.3 45.6clojure -m rec_area
+
+To compute the area of a rectangle,
+ enter its width and its height: (in decimal form) 12.3 34.5    45.6
+
+The area is 560.880000
+
+
+The area is 560.88
+
+
+The area is 560.880000000000000
+
+]0;sp46@gold12: ~/214/projects/01/clojure[01;32msp46@gold12[00m:[01;34m~/214/projects/01/clojure[00m$ 9.9[K[K[Kclojure -m rec_area
+
+To compute the area of a rectangle,
+ enter its width and its height: (in decimal form) 9.9 9.999
+
+The area is 98.990100
+
+
+The area is 98.99010000000001
+
+
+The area is 98.990100000000010
+
+]0;sp46@gold12: ~/214/projects/01/clojure[01;32msp46@gold12[00m:[01;34m~/214/projects/01/clojure[00m$ exit
+
+Script done on 2020-02-06 17:00:09-0500

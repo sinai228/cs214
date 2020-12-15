@@ -1,0 +1,105 @@
+Script started on 2020-04-01 00:37:23-0400
+]0;sp46@gold09: ~/214/projects/06/clojure[01;32msp46@gold09[00m:[01;34m~/214/projects/06/clojure[00m$ cd src
+]0;sp46@gold09: ~/214/projects/06/clojure/src[01;32msp46@gold09[00m:[01;34m~/214/projects/06/clojure/src[00m$ cat array.clj
+;; array.clj "test-drives" function readArray() and printArray().
+;;
+;; Output: the values inside the array, which the user defines.
+;;
+;; Usage: clojure -m array
+;;
+;; Begun by: Dr. Adams, CS 214 at Calvin College.
+;; Completed by: Sinai Park(sp46)
+;; Date: March 20 2020 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(ns array)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; readArray() asks the user for input size of arrays to fill in.       
+;; Receive: anArray, an empty Vector array type; size, Integer size of  array  
+;; Output: anArray is filled with the values from the user 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Replace this line with the definition of sum(); harder (recursive solution)
+(defn readArray [anArray count size]
+  (println "Value of array: ")
+      (if (< count size)  ; check to make sure count is less than size of the array
+
+        (let 
+          [element (int (read))  ; read in the input from the user
+          theArray (conj anArray element) ]  ; append element to anArray
+
+          (readArray theArray (+ count 1) size) ; recursively call readArray
+        ) anArray
+    
+    )
+    
+)
+  
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;s;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; printArray() prints out each element in the array to the user   
+;; Receive: anArray, a Vector array type with Floats in it already      
+;; Output: each element in anArray is printed for the user to see 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   
+(defn printArray [anArray count_num]
+  (if (vector? anArray)   ; check to make sure anArray is a vector
+    (if (< count_num (count anArray))    ; if count is less than the length of the array
+      (let []
+        (print (anArray count_num))     ; output the element in the array to the user
+        (println)
+        (printArray anArray (+ count_num 1)) ; call printArray recursively
+      )
+   ) 
+   (println "is not a vector")  
+  ) 
+)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; main function to test functions readArray() and printArray()
+;; Output: the sum and average of some test vectors.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defn -main []
+  (print "Enter the size of the array: ") (flush); prompt the user for the size of the array
+  (let 
+    [ new_array []
+      size (int (read))
+      result (readArray new_array 0 size)     ; call functions readArray() and printArray()
+    ]
+  (do                
+    (printArray result 0))))
+]0;sp46@gold09: ~/214/projects/06/clojure/src[01;32msp46@gold09[00m:[01;34m~/214/projects/06/clojure/src[00m$ cd -
+/home/sp46/214/projects/06/clojure
+]0;sp46@gold09: ~/214/projects/06/clojure[01;32msp46@gold09[00m:[01;34m~/214/projects/06/clojure[00m$ cd -at array.clj[7Pd srclojure -m array
+Enter the size of the array: 4
+Value of array: 
+7
+Value of array: 
+2
+Value of array: 
+4
+Value of array: 
+356
+Value of array: 
+7
+2
+4
+356
+]0;sp46@gold09: ~/214/projects/06/clojure[01;32msp46@gold09[00m:[01;34m~/214/projects/06/clojure[00m$ clojure -m arrayd -[Klojure -m array
+0Enter the size of the array: 
+Value of array: 
+]0;sp46@gold09: ~/214/projects/06/clojure[01;32msp46@gold09[00m:[01;34m~/214/projects/06/clojure[00m$ clojure -m array
+Enter the size of the array: 4 2
+Value of array: 
+536872
+Value of array: 
+5362
+Value of array: 
+536872
+5362
+]0;sp46@gold09: ~/214/projects/06/clojure[01;32msp46@gold09[00m:[01;34m~/214/projects/06/clojure[00m$ exit
+
+Script done on 2020-04-01 00:38:05-0400
